@@ -1,0 +1,2217 @@
+<div class="gn">
+<style id="gn-style">
+:root{
+  --gn-bg:#07061a;
+  --gn-card:rgba(255,255,255,.045);
+  --gn-line:rgba(160,150,255,.18);
+  --gn-txt:#eceaff;
+  --gn-mut:#a9a3c9;
+  --gn-p1:#8b5cf6;
+  --gn-p2:#3b82f6;
+  --gn-ac:#67e8f9
+}
+
+body{background:var(--gn-bg);color:var(--gn-txt)}
+#wrapper,.site-container,.content-area,.site-main,.entry-content-wrap,.entry.single-entry{
+  background:transparent!important
+}
+.content-container.site-container{
+  max-width:100%!important;
+  padding-left:0!important;
+  padding-right:0!important
+}
+.content-area{
+  margin-top:0!important;
+  margin-bottom:0!important
+}
+.entry-content-wrap{padding:0!important}
+.entry-hero-container-inner,.page .entry-header{display:none!important}
+
+#main-header,#masthead{
+  background:rgba(10,8,28,.82)!important;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gn-line)
+}
+#main-header .site-title,#main-header a,#mobile-header a,.site-branding a{
+  color:var(--gn-txt)!important
+}
+#main-header .header-navigation a:hover{
+  color:var(--gn-ac)!important
+}
+#colophon,.site-footer{
+  background:rgba(10,8,28,.9)!important;
+  color:var(--gn-mut)!important;
+  border-top:1px solid var(--gn-line)
+}
+#colophon a{color:var(--gn-mut)!important}
+#colophon a:hover{color:var(--gn-txt)!important}
+
+.gn *{box-sizing:border-box}
+.gn{
+  font-size:16px;
+  line-height:1.65;
+  color:var(--gn-txt)
+}
+.gn h1,.gn h2,.gn h3{
+  color:var(--gn-txt);
+  letter-spacing:-.02em;
+  margin:0
+}
+.gn p{margin:0}
+.gn a{color:inherit}
+
+.gn-wrap{
+  max-width:1140px;
+  margin:0 auto;
+  padding:0 20px
+}
+.gn-sec{padding:76px 0}
+.gn-sec--alt{
+  background:rgba(255,255,255,.025);
+  border-top:1px solid var(--gn-line);
+  border-bottom:1px solid var(--gn-line)
+}
+
+.gn-i{width:20px;height:20px}
+
+.gn-grad{
+  background:linear-gradient(100deg,#a78bfa,#67e8f9 55%,#60a5fa);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent
+}
+
+.gn-eyebrow{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gn-ac)
+}
+
+.gn-head{
+  max-width:680px;
+  margin:0 auto;
+  text-align:center
+}
+.gn-head h2{
+  font-size:clamp(26px,4vw,38px);
+  margin-top:12px;
+  font-weight:800
+}
+.gn-head p{
+  margin-top:16px;
+  color:var(--gn-mut)
+}
+
+.gn-card{
+  background:var(--gn-card);
+  border:1px solid var(--gn-line);
+  border-radius:18px;
+  padding:26px;
+  backdrop-filter:blur(8px)
+}
+
+.gn-grid{
+  display:grid;
+  gap:20px
+}
+@media(min-width:760px){
+  .gn-g2{grid-template-columns:1fr 1fr}
+  .gn-g3{grid-template-columns:repeat(3,1fr)}
+}
+
+.gn-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  border-radius:12px;
+  padding:13px 22px;
+  font-weight:650;
+  text-decoration:none;
+  border:1px solid transparent;
+  transition:.2s;
+  font-size:15px
+}
+.gn-btn--p{
+  background:linear-gradient(100deg,var(--gn-p1),var(--gn-p2));
+  color:#fff;
+  box-shadow:0 12px 34px -12px rgba(139,92,246,.85)
+}
+.gn-btn--p:hover{
+  filter:brightness(1.1);
+  color:#fff
+}
+.gn-btn--g{
+  background:rgba(255,255,255,.06);
+  border-color:var(--gn-line);
+  color:var(--gn-txt)
+}
+.gn-btn--g:hover{
+  background:rgba(255,255,255,.12);
+  color:var(--gn-txt)
+}
+
+.gn-hero{
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--gn-line)
+}
+.gn-hero__bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:.5
+}
+.gn-hero__veil{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(7,6,26,.55),
+    rgba(7,6,26,.88) 55%,
+    var(--gn-bg)
+  )
+}
+.gn-hero__in{
+  position:relative;
+  display:grid;
+  gap:44px;
+  padding:72px 20px 84px;
+  max-width:1140px;
+  margin:0 auto
+}
+@media(min-width:1000px){
+  .gn-hero__in{
+    grid-template-columns:1.1fr .9fr;
+    align-items:center
+  }
+}
+
+.gn-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--gn-line);
+  background:rgba(255,255,255,.05);
+  border-radius:999px;
+  padding:7px 16px;
+  font-size:13px;
+  color:var(--gn-mut)
+}
+
+.gn-hero h1{
+  font-size:clamp(30px,5.4vw,52px);
+  line-height:1.1;
+  font-weight:850;
+  margin-top:22px
+}
+.gn-hero__lead{
+  margin-top:18px;
+  max-width:620px;
+  color:var(--gn-mut);
+  font-size:17px
+}
+.gn-cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px
+}
+.gn-note{
+  display:flex;
+  gap:9px;
+  margin-top:20px;
+  font-size:13px;
+  color:var(--gn-mut)
+}
+.gn-note svg{
+  flex:none;
+  color:var(--gn-ac);
+  margin-top:2px;
+  width:17px;
+  height:17px
+}
+
+.gn-spec__top{
+  display:flex;
+  align-items:center;
+  gap:15px
+}
+.gn-spec__top img{
+  width:64px;
+  height:64px;
+  border-radius:16px
+}
+.gn-spec dl{
+  margin:22px 0 0;
+  padding:0
+}
+.gn-row{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:11px 0;
+  border-top:1px solid var(--gn-line);
+  font-size:14px
+}
+.gn-row dt{
+  color:var(--gn-mut);
+  margin:0
+}
+.gn-row dd{
+  margin:0;
+  font-weight:600;
+  text-align:right
+}
+
+.gn-feat h3{
+  font-size:17px;
+  margin-top:16px;
+  font-weight:700
+}
+.gn-feat p{
+  margin-top:9px;
+  color:var(--gn-mut);
+  font-size:14.5px
+}
+.gn-ico{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius:11px;
+  background:linear-gradient(100deg,var(--gn-p1),var(--gn-p2));
+  color:#fff
+}
+
+.gn-shot{
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid var(--gn-line);
+  background:var(--gn-card)
+}
+.gn-shot img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.gn-steps{
+  list-style:none;
+  margin:22px 0 0;
+  padding:0;
+  counter-reset:s
+}
+.gn-steps li{
+  display:flex;
+  gap:13px;
+  padding:9px 0;
+  color:var(--gn-mut);
+  font-size:14.5px
+}
+.gn-steps li::before{
+  counter-increment:s;
+  content:counter(s);
+  flex:none;
+  width:26px;
+  height:26px;
+  border-radius:999px;
+  border:1px solid var(--gn-line);
+  color:var(--gn-ac);
+  font-size:12px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.gn-dl{
+  list-style:none;
+  margin:26px 0 0;
+  padding:0;
+  display:grid;
+  gap:12px
+}
+.gn-dl li{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  border:1px solid var(--gn-line);
+  background:rgba(255,255,255,.03);
+  border-radius:14px;
+  padding:16px 20px
+}
+.gn-dl__l{
+  display:flex;
+  align-items:center;
+  gap:15px
+}
+.gn-dl__b{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius:11px;
+  border:1px solid var(--gn-line);
+  color:var(--gn-ac)
+}
+.gn-dl__n{font-weight:650}
+.gn-dl__s{
+  color:var(--gn-mut);
+  font-size:13.5px
+}
+
+.gn-tiny{
+  font-size:13px;
+  color:var(--gn-mut)
+}
+
+.gn-badges{
+  display:grid;
+  gap:14px;
+  margin-top:26px
+}
+@media(min-width:700px){
+  .gn-badges{grid-template-columns:1fr 1fr}
+}
+
+.gn-badge{
+  display:flex;
+  gap:11px;
+  border:1px solid var(--gn-line);
+  background:rgba(255,255,255,.03);
+  border-radius:14px;
+  padding:15px
+}
+.gn-badge svg{
+  flex:none;
+  color:var(--gn-ac);
+  margin-top:2px;
+  width:17px;
+  height:17px
+}
+
+.gn-faq{
+  max-width:800px;
+  margin:36px auto 0
+}
+.gn-faq details{
+  border-bottom:1px solid var(--gn-line);
+  padding:4px 0
+}
+.gn-faq summary{
+  cursor:pointer;
+  list-style:none;
+  padding:17px 0;
+  font-weight:650;
+  display:flex;
+  justify-content:space-between;
+  gap:16px
+}
+.gn-faq summary::-webkit-details-marker{display:none}
+.gn-faq summary::after{
+  content:"+";
+  color:var(--gn-ac);
+  font-weight:700
+}
+.gn-faq details[open] summary::after{
+  content:"\2212"
+}
+.gn-faq p{
+  padding:0 0 18px;
+  color:var(--gn-mut);
+  font-size:15px
+}
+
+.gn-prose{
+  max-width:820px;
+  margin:0 auto
+}
+.gn-prose h2{
+  font-size:26px;
+  margin-top:38px;
+  font-weight:750
+}
+.gn-prose h3{
+  font-size:19px;
+  margin-top:26px;
+  font-weight:700
+}
+.gn-prose p,.gn-prose li{
+  color:var(--gn-mut);
+  margin-top:14px
+}
+.gn-prose ul,.gn-prose ol{
+  padding-left:22px
+}
+.gn-prose strong{
+  color:var(--gn-txt)
+}
+
+.gn-ph{
+  padding:66px 0 8px;
+  text-align:center
+}
+.gn-ph h1{
+  font-size:clamp(28px,5vw,44px);
+  font-weight:850
+}
+.gn-ph p{
+  margin-top:16px;
+  color:var(--gn-mut);
+  max-width:660px;
+  margin-left:auto;
+  margin-right:auto
+}
+
+.gn-table-wrap{
+  overflow-x:auto;
+  margin-top:30px;
+  border:1px solid var(--gn-line);
+  border-radius:18px
+}
+.gn-table{
+  width:100%;
+  min-width:700px;
+  border-collapse:collapse;
+  background:rgba(255,255,255,.025)
+}
+.gn-table th,
+.gn-table td{
+  padding:15px 17px;
+  text-align:left;
+  border-bottom:1px solid var(--gn-line);
+  vertical-align:top;
+  font-size:14px
+}
+.gn-table th{
+  color:var(--gn-txt);
+  font-weight:750;
+  background:rgba(255,255,255,.04)
+}
+.gn-table td{
+  color:var(--gn-mut)
+}
+.gn-table tr:last-child td{
+  border-bottom:0
+}
+.gn-table td:first-child{
+  color:var(--gn-txt);
+  font-weight:650
+}
+
+.gn-callout{
+  margin-top:24px;
+  padding:20px;
+  border:1px solid var(--gn-line);
+  border-radius:16px;
+  background:rgba(255,255,255,.035);
+  display:flex;
+  gap:13px
+}
+.gn-callout svg{
+  flex:none;
+  color:var(--gn-ac);
+  width:20px;
+  height:20px;
+  margin-top:2px
+}
+.gn-callout p{
+  color:var(--gn-mut);
+  font-size:14px
+}
+
+.gn-list{
+  margin:18px 0 0;
+  padding-left:20px
+}
+.gn-list li{
+  color:var(--gn-mut);
+  margin:9px 0
+}
+.gn-list li strong{
+  color:var(--gn-txt)
+}
+
+.gn-card h4{
+  margin:18px 0 0;
+  font-size:15px;
+  font-weight:750
+}
+
+.gn-mini-grid{
+  display:grid;
+  gap:14px;
+  margin-top:26px
+}
+@media(min-width:700px){
+  .gn-mini-grid{
+    grid-template-columns:1fr 1fr
+  }
+}
+
+.gn-mini{
+  border:1px solid var(--gn-line);
+  border-radius:14px;
+  padding:18px;
+  background:rgba(255,255,255,.03)
+}
+.gn-mini h3{
+  font-size:16px;
+  font-weight:700
+}
+.gn-mini p{
+  margin-top:8px;
+  color:var(--gn-mut);
+  font-size:14px
+}
+
+.gn-danger{
+  border-color:rgba(248,113,113,.25);
+  background:rgba(248,113,113,.035)
+}
+
+.gn-good{
+  border-color:rgba(103,232,249,.22);
+  background:rgba(103,232,249,.025)
+}
+
+@media(max-width:650px){
+  .gn-sec{padding:58px 0}
+  .gn-hero__in{padding:58px 20px 68px}
+  .gn-dl li{align-items:flex-start}
+  .gn-dl li .gn-btn{width:100%;justify-content:center}
+}
+</style>
+
+
+<!-- HERO -->
+<section class="gn-hero">
+  <div class="gn-hero__bg" style="background-image:url('https://dev-gacha-nebula-apks.pantheonsite.io/wp-content/uploads/2026/08/nebula-hero.jpg')"></div>
+  <div class="gn-hero__veil"></div>
+
+  <div class="gn-hero__in">
+    <div>
+      <span class="gn-pill">
+        <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"></path>
+        </svg>
+        Fan-made mod of Gacha Club · by noxula
+      </span>
+
+      <h1>
+        <span class="gn-grad">Gacha Nebula APK</span><br>
+        Features, download &amp; install guide
+      </h1>
+
+      <p class="gn-hero__lead">
+        Gacha Nebula is a fan-made mod of Gacha Club that keeps the base game intact while adding a much larger library of characters, clothing, poses, props and backgrounds, wrapped in a redesigned space-themed interface.
+      </p>
+
+      <p class="gn-hero__lead">
+        If you already play Gacha Club, Nebula will feel immediately familiar. It keeps the same editor and Studio while giving you considerably more to build with. It is made by <strong>noxula</strong>, with <strong>Deana_3</strong> and <strong>Agoras</strong> credited alongside, and is published on itch.io rather than Google Play.
+      </p>
+
+      <div class="gn-cta">
+        <a class="gn-btn gn-btn--p" href="/download/">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v11m0 0l4-4m-4 4l-4-4"></path>
+            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"></path>
+          </svg>
+          Download Gacha Nebula
+        </a>
+
+        <a class="gn-btn gn-btn--g" href="https://noxula.itch.io/gacha-nebula" target="_blank" rel="noopener nofollow">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 4h6v6"></path>
+            <path d="M20 4l-8 8"></path>
+            <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"></path>
+          </svg>
+          Official project page
+        </a>
+      </div>
+
+      <p class="gn-note">
+        <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"></path>
+          <path d="M9 12l2 2 4-4"></path>
+        </svg>
+        <span>
+          The creators publish the project on itch.io. Version numbers and file details can change between releases, so check the official project page before installing.
+        </span>
+      </p>
+    </div>
+
+    <div class="gn-card gn-spec" style="border-radius:22px;padding:30px">
+      <div class="gn-spec__top">
+        <img src="https://dev-gacha-nebula-apks.pantheonsite.io/wp-content/uploads/2026/08/gacha-nebula-icon.png" width="64" height="64" alt="Gacha Nebula app icon">
+
+        <div>
+          <p style="font-size:19px;font-weight:750">Gacha Nebula</p>
+          <p class="gn-tiny">Character creator · Casual</p>
+        </div>
+      </div>
+
+      <dl>
+        <div class="gn-row">
+          <dt>App name</dt>
+          <dd>Gacha Nebula</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Type</dt>
+          <dd>Fan-made Gacha Club mod</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Creators</dt>
+          <dd>noxula, Deana_3, Agoras</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Official host</dt>
+          <dd>noxula.itch.io</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Platforms</dt>
+          <dd>Android · Windows</dd>
+        </div>
+        <div class="gn-row">
+          <dt>iOS</dt>
+          <dd>Not available</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Base game</dt>
+          <dd>Gacha Club by Lunime</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Price</dt>
+          <dd>Free</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Android builds</dt>
+          <dd>32-bit &amp; 64-bit</dd>
+        </div>
+        <div class="gn-row">
+          <dt>Current version</dt>
+          <dd>Check official page</dd>
+        </div>
+        <div class="gn-row">
+          <dt>File size</dt>
+          <dd>Check official page</dd>
+        </div>
+      </dl>
+
+      <p class="gn-tiny" style="margin-top:16px">
+        Version numbers, file sizes and Android requirements can change with releases. Your source article specifically marks these values for verification, so they should be checked against the creators' current page rather than guessed.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- OVERVIEW -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+    <div class="gn-head">
+      <span class="gn-eyebrow">Overview</span>
+      <h2>What Gacha Nebula actually is</h2>
+      <p>
+        A mod, not a sequel. Everything that made Gacha Club work stays where it was — the mod adds content and a redesigned presentation on top.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <article class="gn-card">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M4 5h16v14H4z"></path>
+            <path d="M8 9h8M8 13h5"></path>
+          </svg>
+        </span>
+        <h3 style="font-size:17px;font-weight:700;margin-top:16px">Built on Gacha Club</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          The editor, Studio and familiar scene tools remain the foundation, so existing Gacha Club players do not have to relearn the basic workflow.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="8" r="3"></circle>
+            <path d="M5 21a7 7 0 0 1 14 0"></path>
+          </svg>
+        </span>
+        <h3 style="font-size:17px;font-weight:700;margin-top:16px">Made by the community</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          Created by noxula with Deana_3 and Agoras, and distributed as a free fan project through itch.io rather than an official app store.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="5" y="3" width="14" height="18" rx="2"></rect>
+            <path d="M9 17h6"></path>
+          </svg>
+        </span>
+        <h3 style="font-size:17px;font-weight:700;margin-top:16px">Installs separately</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          Nebula is presented as its own app, allowing Gacha Club to remain installed separately on the same device.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURES -->
+<section id="features" class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Features</span>
+      <h2>What the mod adds</h2>
+      <p>
+        The biggest difference is the amount of content available for character creation, scenes and customization.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <article class="gn-card gn-feat">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9"></circle>
+            <circle cx="8" cy="10" r="1.2"></circle>
+            <circle cx="12" cy="7.5" r="1.2"></circle>
+            <circle cx="16" cy="10" r="1.2"></circle>
+          </svg>
+        </span>
+        <h3>A much larger customization library</h3>
+        <p>
+          Nebula layers additional clothing, hairstyles, eye details, side hairs, accessories, props, pets, objects, poses and backgrounds on top of the base catalogue. The source article also describes extra character slots and a wider color range for items that support recoloring.
+        </p>
+      </article>
+
+      <article class="gn-card gn-feat">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="9" cy="8" r="3"></circle>
+            <path d="M3 20a6 6 0 0 1 12 0"></path>
+            <path d="M17 11a3 3 0 1 0-2-5"></path>
+            <path d="M17 14a6 6 0 0 1 4 6"></path>
+          </svg>
+        </span>
+        <h3>More character slots</h3>
+        <p>
+          The expanded setup provides room for larger casts and group scenes, reducing the need to delete existing characters just to make space for another creation.
+        </p>
+      </article>
+
+      <article class="gn-card gn-feat">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <circle cx="8.5" cy="9.5" r="1.5"></circle>
+            <path d="M21 16l-5-5-9 9"></path>
+          </svg>
+        </span>
+        <h3>New backgrounds and scenes</h3>
+        <p>
+          Additional backgrounds give Studio creators more environments to work with, including space-inspired visuals and everyday settings.
+        </p>
+      </article>
+
+      <article class="gn-card gn-feat">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"></path>
+          </svg>
+        </span>
+        <h3>Redesigned space-themed interface</h3>
+        <p>
+          Menus, buttons and backgrounds are redesigned around a nebula theme. The underlying screens remain familiar, while the visual presentation is distinctly different from stock Gacha Club. The project also has its own mascot.
+        </p>
+      </article>
+
+      <article class="gn-card gn-feat">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M8 12h8"></path>
+            <path d="M12 8v8"></path>
+          </svg>
+        </span>
+        <h3>Pupil masking</h3>
+        <p>
+          The source article identifies pupil masking as an editor improvement that keeps pupils inside the eye shape when they are moved or resized. The article marks this specific claim for verification against the current project information before publishing.
+        </p>
+      </article>
+
+      <article class="gn-card gn-feat">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 3l9 5-9 5-9-5z"></path>
+            <path d="M3 13l9 5 9-5"></path>
+          </svg>
+        </span>
+        <h3>Per-item creator credits</h3>
+        <p>
+          The original article says individual assets can include credits attributing them to the artists who created them. This is useful when creators share or repost work using the added assets.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 3l9 5-9 5-9-5z"></path>
+        <path d="M3 13l9 5 9-5"></path>
+      </svg>
+      <p>
+        Asset counts quoted by different download sites can vary because pages count different categories and may include content from other mods. Use the current project page rather than relying on a number from an unofficial mirror.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- INHERITED FEATURES -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Base Game</span>
+      <h2>Everything Gacha Club already does</h2>
+      <p>
+        Nebula is a mod rather than a completely separate game, so many of the familiar Gacha Club modes remain part of the experience.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <article class="gn-card">
+        <span class="gn-ico">01</span>
+        <h3 style="margin-top:16px;font-size:17px">Studio mode</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          Studio provides scene-building tools, including scenes with up to ten characters, dialogue boxes and a narrator option.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">02</span>
+        <h3 style="margin-top:16px;font-size:17px">Battle mode</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          Battle-related systems such as unit rosters, pets, elemental towers and Shadows of Corruption come from the base Gacha Club experience rather than being inventions of Nebula.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">03</span>
+        <h3 style="margin-top:16px;font-size:17px">Minigames</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          The base game's minigames are also part of the feature set inherited by the mod.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-callout gn-danger">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 4l9 16H3z"></path>
+        <path d="M12 9v5"></path>
+        <path d="M12 17v.5"></path>
+      </svg>
+      <p>
+        Be cautious with pages claiming Nebula adds galaxy exploration maps, hidden dungeons, collectible rare resources, day-night cycles or adaptive difficulty. Those claims are not supported by the creators' description or the Gacha Club information in your source article.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- COMPARISON -->
+<section class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Comparison</span>
+      <h2>Gacha Nebula vs Gacha Club</h2>
+      <p>
+        Nebula keeps the base game's foundation but changes how much content and which platforms are available.
+      </p>
+    </div>
+
+    <div class="gn-table-wrap">
+      <table class="gn-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Gacha Club</th>
+            <th>Gacha Nebula</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Made by</td>
+            <td>Lunime</td>
+            <td>noxula, Deana_3, Agoras</td>
+          </tr>
+          <tr>
+            <td>Where to get it</td>
+            <td>Google Play, App Store, itch.io</td>
+            <td>noxula.itch.io only</td>
+          </tr>
+          <tr>
+            <td>Android</td>
+            <td>Yes</td>
+            <td>Yes, two builds</td>
+          </tr>
+          <tr>
+            <td>iOS</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Windows</td>
+            <td>Demo only — customization and Studio, without battle or minigames</td>
+            <td>Full mod build</td>
+          </tr>
+          <tr>
+            <td>Assets</td>
+            <td>Base catalogue</td>
+            <td>Base catalogue plus a large added set</td>
+          </tr>
+          <tr>
+            <td>Updates</td>
+            <td>Automatic via store</td>
+            <td>Manual — check the project page yourself</td>
+          </tr>
+          <tr>
+            <td>Official support</td>
+            <td>Yes</td>
+            <td>No, fan project</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>Free</td>
+            <td>Free</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="gn-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 8v8M8 12h8"></path>
+      </svg>
+      <p>
+        The Windows comparison is particularly notable in the source article: the official PC version is described as a demo with customization and Studio, while Nebula provides a native Windows build. On mobile, the trade-off is the larger asset library versus manual updates and the lack of official support.
+      </p>
+    </div>
+
+    <div class="gn-callout gn-danger">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 4l9 16H3z"></path>
+        <path d="M12 9v5"></path>
+        <path d="M12 17v.5"></path>
+      </svg>
+      <p>
+        Gacha Nebula is not made, endorsed or supported by Lunime, and Lunime does not carry responsibility for the fan-made mod.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROS AND CONS -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Pros &amp; Cons</span>
+      <h2>Is Gacha Nebula right for you?</h2>
+      <p>
+        The expanded library is the main reason to install Nebula, but there are several practical trade-offs to understand first.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g2" style="margin-top:44px">
+
+      <article class="gn-card gn-good">
+        <span class="gn-ico">
+          ✓
+        </span>
+        <h3 style="font-size:20px;font-weight:750;margin-top:16px">
+          What it does well
+        </h3>
+
+        <ul class="gn-list">
+          <li>A substantially larger customization library than the base game.</li>
+          <li>Free, with no subscription and no paywalled assets in the source description.</li>
+          <li>Works offline once installed — the source article marks this for verification.</li>
+          <li>A native Windows build.</li>
+          <li>Named creators with a public project page and documentation.</li>
+          <li>Per-item artist credits are included in the described feature set.</li>
+        </ul>
+      </article>
+
+      <article class="gn-card gn-danger">
+        <span class="gn-ico">
+          !
+        </span>
+        <h3 style="font-size:20px;font-weight:750;margin-top:16px">
+          What to be aware of
+        </h3>
+
+        <ul class="gn-list">
+          <li>More content means more storage requirements and potentially more strain on older or low-RAM phones.</li>
+          <li>No automatic updates; you need to check the project page yourself.</li>
+          <li>Two Android builds mean you need to know your device architecture.</li>
+          <li>No iOS version.</li>
+          <li>Some poses have documented glitches according to the source article.</li>
+          <li>No official support from Lunime.</li>
+          <li>Gacha Club saves do not automatically carry over.</li>
+        </ul>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SCREENSHOTS -->
+<section id="screenshots" class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Screenshots</span>
+      <h2>A look at the interface</h2>
+      <p>
+        Familiar layout, cosmic reskin — the editor, Studio and wardrobe as they appear in the mod.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <figure class="gn-shot" style="margin:0">
+        <img src="https://dev-gacha-nebula-apks.pantheonsite.io/wp-content/uploads/2026/08/gacha-nebula-editor.jpg"
+             alt="Gacha Nebula character editor with clothing and hairstyle options"
+             loading="lazy"
+             width="720"
+             height="1280">
+      </figure>
+
+      <figure class="gn-shot" style="margin:0">
+        <img src="https://dev-gacha-nebula-apks.pantheonsite.io/wp-content/uploads/2026/08/gacha-nebula-studio.jpg"
+             alt="Gacha Nebula Studio scene with several characters on a nebula backdrop"
+             loading="lazy"
+             width="720"
+             height="1280">
+      </figure>
+
+      <figure class="gn-shot" style="margin:0">
+        <img src="https://dev-gacha-nebula-apks.pantheonsite.io/wp-content/uploads/2026/08/gacha-nebula-wardrobe.jpg"
+             alt="Gacha Nebula wardrobe grid full of outfits and accessories"
+             loading="lazy"
+             width="720"
+             height="1280">
+      </figure>
+
+    </div>
+
+    <p class="gn-tiny" style="text-align:center;margin-top:20px">
+      Illustrative previews of the mod’s interface style.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- WHICH FILE -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Choose Your Build</span>
+      <h2>Which Gacha Nebula file do you need?</h2>
+      <p>
+        Android users have separate 32-bit and 64-bit builds. Windows users should download the PC archive instead of an APK.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <article class="gn-card">
+        <span class="gn-ico">64</span>
+        <h3 style="font-size:19px;font-weight:750;margin-top:16px">64-bit Android</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          arm64-v8a is the right choice for most phones sold in recent years. Start with this build if your device supports 64-bit apps.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">32</span>
+        <h3 style="font-size:19px;font-weight:750;margin-top:16px">32-bit Android</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          armeabi-v7a is intended for older or budget devices that use a 32-bit architecture.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="2.5" y="4" width="19" height="12" rx="2"></rect>
+            <path d="M8 20h8M12 16v4"></path>
+          </svg>
+        </span>
+        <h3 style="font-size:19px;font-weight:750;margin-top:16px">Windows archive</h3>
+        <p style="margin-top:9px;color:var(--gn-mut);font-size:14.5px">
+          Windows users should download the PC archive rather than either Android APK. An APK will not run on Windows on its own.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-card" style="margin-top:20px">
+      <h3 style="font-size:18px;font-weight:750">Not sure about your architecture?</h3>
+
+      <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+        The source article recommends using a free system-information app to identify the CPU architecture:
+        <strong>arm64-v8a</strong> means 64-bit, while <strong>armeabi-v7a</strong> means 32-bit.
+      </p>
+
+      <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+        If an installation fails because of the architecture, downloading the same build again will not solve the problem. Switch to the appropriate build instead.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ANDROID INSTALL -->
+<section class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Install Guide</span>
+      <h2>How to download and install on Android</h2>
+      <p>
+        Choose the correct architecture first, then install the APK using Android's normal sideloading process.
+      </p>
+    </div>
+
+    <div style="margin-top:44px">
+
+      <div class="gn-card">
+
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="gn-ico">
+            <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect>
+              <path d="M10.5 18.5h3"></path>
+            </svg>
+          </span>
+
+          <h3 style="font-size:19px;font-weight:750">Android installation</h3>
+        </div>
+
+        <ol class="gn-steps">
+          <li>
+            <span><strong>Download the file</strong> that matches your device architecture.</span>
+          </li>
+          <li>
+            <span>
+              Keep the file when your browser warns you about downloading an APK outside the Play Store. Your source article notes that this is a category warning about sideloading rather than a scan result for this particular file.
+            </span>
+          </li>
+          <li>
+            <span>
+              Allow the installation. Android normally blocks apps from outside the Play Store. When prompted, allow the specific browser or file manager to install unknown apps.
+            </span>
+          </li>
+          <li>
+            <span>
+              Open the APK and tap <strong>Install</strong>.
+            </span>
+          </li>
+          <li>
+            <span>
+              Launch Gacha Nebula after installation. It should appear separately from Gacha Club.
+            </span>
+          </li>
+          <li>
+            <span>
+              Revoke the unknown-app installation permission afterward. There is no reason to leave it enabled once the installation is complete.
+            </span>
+          </li>
+        </ol>
+
+      </div>
+
+      <div class="gn-grid gn-g2" style="margin-top:20px">
+
+        <div class="gn-badge">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 4l9 16H3z"></path>
+            <path d="M12 10v4M12 17.5v.5"></path>
+          </svg>
+          <p class="gn-tiny">
+            Do not disable Play Protect or other security features simply to force an installation. Your source article specifically advises against doing this.
+          </p>
+        </div>
+
+        <div class="gn-badge">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M4 12h16"></path>
+            <path d="M12 4v16"></path>
+          </svg>
+          <p class="gn-tiny">
+            Avoid third-party “one-click installer” tools offered by download sites. They add another party between you and the file without a clear benefit.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WINDOWS -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">PC Version</span>
+      <h2>Gacha Nebula on Windows</h2>
+      <p>
+        The creators publish a native Windows build, so BlueStacks, LDPlayer and NoxPlayer are not required.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g2" style="margin-top:44px">
+
+      <div class="gn-card">
+
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="gn-ico">
+            <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="2.5" y="4" width="19" height="12" rx="2"></rect>
+              <path d="M8 20h8M12 16v4"></path>
+            </svg>
+          </span>
+          <h3 style="font-size:19px;font-weight:750">Install the Windows version</h3>
+        </div>
+
+        <ol class="gn-steps">
+          <li><span>Download the Windows archive from the project page.</span></li>
+          <li><span>Extract the archive into a folder of its own.</span></li>
+          <li><span>Keep all extracted files together.</span></li>
+          <li><span>Run the executable from inside that folder.</span></li>
+          <li><span>Do not move the executable away from the files it depends on.</span></li>
+        </ol>
+
+      </div>
+
+      <div class="gn-card">
+
+        <h3 style="font-size:19px;font-weight:750">Useful Windows notes</h3>
+
+        <ul class="gn-list">
+          <li>If you want a desktop shortcut, create a shortcut rather than moving the executable out of its folder.</li>
+          <li>If extraction fails, the source article recommends trying a different archive tool.</li>
+          <li>An emulator is only useful if you specifically need the Android build on a computer, such as when you want to match phone behavior.</li>
+          <li>The source article notes that SmartScreen can appear for an unsigned indie build.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- IOS -->
+<section class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">iPhone &amp; iPad</span>
+      <h2>Gacha Nebula on iOS</h2>
+      <p>
+        There is no iOS version of Gacha Nebula in the source material.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g2" style="margin-top:44px">
+
+      <article class="gn-card gn-danger">
+        <span class="gn-ico">iOS</span>
+        <h3 style="font-size:19px;font-weight:750;margin-top:16px">
+          No official Nebula iOS build
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          There is no supported way to install an Android APK on an iPhone or iPad.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">!</span>
+        <h3 style="font-size:19px;font-weight:750;margin-top:16px">
+          Be careful with App Store listings
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          Your source article warns that App Store applications using Nebula or Nox names may come from unrelated developers and may explicitly state that they are not affiliated with Gacha. Check the developer before assuming an app is the fan project.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-card" style="margin-top:20px">
+
+      <h3 style="font-size:18px;font-weight:750">
+        Official alternatives on iOS
+      </h3>
+
+      <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+        If you are on iOS and want an official Gacha experience, the source article points to Gacha Club and Gacha Life 2 from Lunime. Neither provides Nebula's expanded asset library, but both are official and supported.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- UPDATES -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Updates</span>
+      <h2>Keeping Gacha Nebula updated</h2>
+      <p>
+        Sideloaded apps do not update through an app store, so checking the project page is part of maintaining the installation.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g2" style="margin-top:44px">
+
+      <article class="gn-card">
+        <span class="gn-ico">01</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Check the project page
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          Nothing automatically tells you when a new Gacha Nebula version appears. Check the creators' project page for new releases.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">02</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Install over the existing version
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          The source article recommends installing a new version over the old one instead of uninstalling first, because uninstalling can remove app data.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 7v5l3 2"></path>
+      </svg>
+      <p>
+        The source article also says the creators note that after updating, closing and reopening the app may be needed for newly added character slots to register. This particular claim is marked for verification in the source.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SAVE DATA -->
+<section class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Save Data</span>
+      <h2>Will Gacha Nebula affect your Gacha Club save?</h2>
+      <p>
+        Nebula is intended to exist separately from the base game rather than replacing it.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <article class="gn-card">
+        <span class="gn-ico">01</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Separate installation
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          Gacha Nebula installs separately and should not overwrite Gacha Club, allowing both to normally remain on the same device.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">02</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Separate data
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          Treat the two installations as having unconnected data. Characters and scenes do not automatically move between the two apps.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">03</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Back up important work
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          Export anything important before uninstalling either app because uninstalling an application can delete its app data.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"></path>
+        <path d="M9 12l2 2 4-4"></path>
+      </svg>
+      <p>
+        Your source article also states that characters and scenes do not move between Android and Windows builds, and marks the related platform-transfer claim for verification. Do not present cross-platform transfer as guaranteed without checking the current documentation.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TROUBLESHOOTING -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Troubleshooting</span>
+      <h2>Fixing common Gacha Nebula problems</h2>
+      <p>
+        These troubleshooting points come from the original article and should be checked against the creators' current known-issues information before publication.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g2" style="margin-top:44px">
+
+      <article class="gn-card">
+        <h3 style="font-size:19px;font-weight:750">
+          “App not installed” or parse error
+        </h3>
+        <p style="margin-top:12px;color:var(--gn-mut);font-size:14.5px">
+          Check the architecture first because the wrong build is described as the usual cause. If the build matches your device, treat the problem as a possible incomplete download: delete the file and download it again using a stable connection. Make sure you have enough free storage.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:19px;font-weight:750">
+          It installs but crashes on launch
+        </h3>
+        <p style="margin-top:12px;color:var(--gn-mut);font-size:14.5px">
+          Free up storage, restart the device and reinstall using the correct architecture build. The source article also suggests lowering graphics or music settings on low-RAM phones.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:19px;font-weight:750">
+          Poses will not switch or glitch
+        </h3>
+        <p style="margin-top:12px;color:var(--gn-mut);font-size:14.5px">
+          The original article describes this as a documented bug. Its stated workaround is to select a body map before selecting the pose. Because the source marks the troubleshooting section for verification, confirm the current workaround with the creators before publishing it as definitive.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:19px;font-weight:750">
+          Character slots show “undefined”
+        </h3>
+        <p style="margin-top:12px;color:var(--gn-mut);font-size:14.5px">
+          The source article says newly added slots can initially display “undefined”, with applying a preset described as a fix. Closing and reopening after an update is also described as helping. Verify this behavior against the current release notes before publishing.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-card" style="margin-top:20px">
+
+      <h3 style="font-size:18px;font-weight:750">
+        Still having trouble?
+      </h3>
+
+      <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+        Check the creators' known-issues information before reporting a problem. Your original article specifically recommends checking what is already documented first.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- OTHER MODS -->
+<section class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Alternatives</span>
+      <h2>Other Gacha Club mods worth knowing</h2>
+      <p>
+        If Nebula is not the right fit, the original article lists several other fan-made projects.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <article class="gn-card">
+        <h3 style="font-size:18px;font-weight:750">Gacha Plus</h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          By FémLol Stúdió. The source article describes it as one of the better-maintained alternatives, with a Windows launcher that updates the game automatically and public launcher code.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:18px;font-weight:750">Gacha Cute</h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          By Akemi Natsuky. The article describes it as a well-known and nostalgic mod but notes reported installation problems on newer Android versions and the lack of a 64-bit build.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:18px;font-weight:750">Gacha Star</h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          By SpaxeMods. The source article notes multiple releases and its connection with the same creator's Gacha Nymph.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:18px;font-weight:750">Gacha Redux</h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          By DustLol. The article describes it as covering Windows and Android and appearing prominently among itch.io's Gacha Club listings.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:18px;font-weight:750">Gacha Nox</h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          Also by noxula. The original article says Gacha Nox was the mod Nebula replaced and is marked cancelled.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <h3 style="font-size:18px;font-weight:750">Gacha Life 2</h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          This is the official route rather than a fan mod. It is Lunime's newer game, distributed through stores and supported officially.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M14 4h6v6"></path>
+        <path d="M20 4l-8 8"></path>
+        <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"></path>
+      </svg>
+      <p>
+        General rule from the source article: use the creator's own itch.io page when possible. Reuploads on file-sharing sites are harder to verify.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VERSION DIFFERENCES -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Versions</span>
+      <h2>Why download sites list different versions</h2>
+      <p>
+        Search results can show conflicting version numbers because not every listing is describing the same release.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g3" style="margin-top:44px">
+
+      <article class="gn-card">
+        <span class="gn-ico">01</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Mirrors become stale
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          A site may have copied an older file and still display it later with a recently updated page date.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">02</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Re-uploaded builds
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          Some pages may host builds that are beta, pulled or re-uploaded by other users rather than directly released by the creators.
+        </p>
+      </article>
+
+      <article class="gn-card">
+        <span class="gn-ico">03</span>
+        <h3 style="font-size:18px;font-weight:750;margin-top:16px">
+          Conflicting identifiers
+        </h3>
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          The source article notes that listings disagree about the package identifier, which can indicate that different files are being described.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="gn-callout gn-good">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M8 12l3 3 5-6"></path>
+      </svg>
+      <p>
+        Read the version from the creators' project page and treat other version numbers as potentially stale copies until you can verify them.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOW THIS SITE HANDLES FILES -->
+<section class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Transparency</span>
+      <h2>How this site handles the files</h2>
+      <p>
+        Download transparency matters when dealing with third-party APKs.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g2" style="margin-top:44px">
+
+      <article class="gn-card">
+        <span class="gn-ico">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M8 12l3 3 5-6"></path>
+          </svg>
+        </span>
+
+        <h3 style="font-size:19px;font-weight:750;margin-top:16px">
+          Source and file handling
+        </h3>
+
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          According to the supplied article, the site mirrors Gacha Nebula from the creators' itch.io page and does not modify, repackage or re-sign the files. Both Android builds are offered under their original file names so users can compare them with the source.
+        </p>
+
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          The download should deliver the file it names rather than an installer wrapper.
+        </p>
+      </article>
+
+      <article class="gn-card gn-danger">
+        <span class="gn-ico">!</span>
+
+        <h3 style="font-size:19px;font-weight:750;margin-top:16px">
+          No “100% safe” promise
+        </h3>
+
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          The source article explicitly avoids claiming that an APK is “100% safe” or “virus-free.” The practical approach is to identify where the copy came from and give users enough information to verify it.
+        </p>
+
+        <p style="margin-top:10px;color:var(--gn-mut);font-size:14.5px">
+          If any information on the page becomes stale or a download is broken, the source article says the site should provide a way for users to report it.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOW TO JUDGE APK PAGE -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">Safety Guide</span>
+      <h2>How to judge any APK download page</h2>
+      <p>
+        A professional download page should make it clear what file you are receiving and who actually created it.
+      </p>
+    </div>
+
+    <div class="gn-grid gn-g2" style="margin-top:44px">
+
+      <article class="gn-card">
+        <h3 style="font-size:19px;font-weight:750">
+          Questions worth asking
+        </h3>
+
+        <ul class="gn-list">
+          <li>Does the download button deliver the file it names?</li>
+          <li>Are security badges backed by a dated scan report, or are they simply images?</li>
+          <li>Does the page claim “100% safe” without evidence?</li>
+          <li>Does the page use urgency such as “download before it's removed” or “today only”?</li>
+          <li>Does the page clearly tell you who made the application?</li>
+        </ul>
+      </article>
+
+      <article class="gn-card gn-good">
+        <h3 style="font-size:19px;font-weight:750">
+          Practical Android baseline
+        </h3>
+
+        <ul class="gn-list">
+          <li>Keep Play Protect enabled.</li>
+          <li>Prefer the creators' own project page when available.</li>
+          <li>Know which APK architecture your device needs.</li>
+          <li>Do not disable security features just to force an installation.</li>
+          <li>Revoke the unknown-app installation permission after installing.</li>
+        </ul>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- DOWNLOAD -->
+<section class="gn-sec gn-sec--alt">
+  <div class="gn-wrap">
+
+    <div class="gn-card" style="border-radius:22px;padding:30px">
+
+      <h2 style="font-size:clamp(24px,3.4vw,32px);font-weight:800">
+        Download Gacha Nebula
+      </h2>
+
+      <p style="margin-top:12px;max-width:720px;color:var(--gn-mut);font-size:15px">
+        Choose the file matching your platform and Android architecture. The creator's project page is also linked so you can verify the current release directly.
+      </p>
+
+      <ul class="gn-dl">
+
+        <li>
+          <div class="gn-dl__l">
+            <span class="gn-dl__b">
+              <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect>
+                <path d="M10.5 18.5h3"></path>
+              </svg>
+            </span>
+
+            <span>
+              <span class="gn-dl__n">Gacha Nebula 64-bit (Android)</span><br>
+              <span class="gn-dl__s">
+                arm64-v8a — recommended for most modern phones
+              </span>
+            </span>
+          </div>
+
+          <a class="gn-btn gn-btn--p"
+             href="https://noxula.itch.io/gacha-nebula"
+             target="_blank"
+             rel="noopener nofollow">
+            Download
+          </a>
+        </li>
+
+        <li>
+          <div class="gn-dl__l">
+            <span class="gn-dl__b">
+              <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect>
+                <path d="M10.5 18.5h3"></path>
+              </svg>
+            </span>
+
+            <span>
+              <span class="gn-dl__n">Gacha Nebula 32-bit (Android)</span><br>
+              <span class="gn-dl__s">
+                armeabi-v7a — older or budget devices
+              </span>
+            </span>
+          </div>
+
+          <a class="gn-btn gn-btn--p"
+             href="https://noxula.itch.io/gacha-nebula"
+             target="_blank"
+             rel="noopener nofollow">
+            Download
+          </a>
+        </li>
+
+        <li>
+          <div class="gn-dl__l">
+            <span class="gn-dl__b">
+              <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="2.5" y="4" width="19" height="12" rx="2"></rect>
+                <path d="M8 20h8M12 16v4"></path>
+              </svg>
+            </span>
+
+            <span>
+              <span class="gn-dl__n">Gacha Nebula (Windows)</span><br>
+              <span class="gn-dl__s">
+                PC archive — extract and run, no emulator required
+              </span>
+            </span>
+          </div>
+
+          <a class="gn-btn gn-btn--p"
+             href="https://noxula.itch.io/gacha-nebula"
+             target="_blank"
+             rel="noopener nofollow">
+            Download
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="gn-badges">
+
+        <div class="gn-badge">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M8 12l3 3 5-6"></path>
+          </svg>
+
+          <p class="gn-tiny">
+            The supplied article states that the site's copies come from the creators' itch.io page under their original names, without installer wrappers or re-signing. This statement should remain only if it accurately describes the site's actual file process.
+          </p>
+        </div>
+
+        <div class="gn-badge">
+          <svg class="gn-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M14 4h6v6"></path>
+            <path d="M20 4l-8 8"></path>
+            <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"></path>
+          </svg>
+
+          <p class="gn-tiny">
+            Prefer the source? <a href="https://noxula.itch.io/gacha-nebula" target="_blank" rel="noopener nofollow" style="text-decoration:underline">Download directly from noxula.itch.io</a>.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="gn-tiny" style="margin-top:22px">
+        Gacha Nebula is not made, endorsed or supported by Lunime. Version numbers and file sizes shown on this page should be checked against the creators' current project page. This page does not claim that any APK is “100% safe”; it identifies the stated source and encourages users to verify downloads themselves.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="gn-sec">
+  <div class="gn-wrap">
+
+    <div class="gn-head">
+      <span class="gn-eyebrow">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <p>
+        Answers to the most common questions about Gacha Nebula, its files, platforms and installation.
+      </p>
+    </div>
+
+    <div class="gn-faq">
+
+      <details>
+        <summary>What is Gacha Nebula?</summary>
+        <p>
+          Gacha Nebula is a fan-made mod of Gacha Club created by noxula together with Deana_3 and Agoras. It keeps the original editor and Studio foundation while adding a much larger library of clothing, hairstyles, accessories, props, pets, poses and backgrounds, together with a space-themed interface.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is Gacha Nebula free?</summary>
+        <p>
+          Yes. The source article describes Gacha Nebula as a free fan project. A page charging a subscription for the creators' release should not automatically be assumed to be the official project.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why is Gacha Nebula an APK instead of a Play Store app?</summary>
+        <p>
+          The mod is published on itch.io rather than Google Play. Android users therefore install the Android release manually as an APK.
+        </p>
+      </details>
+
+      <details>
+        <summary>Which file should I download — 32-bit or 64-bit?</summary>
+        <p>
+          Most recent phones use arm64-v8a, which is the 64-bit build. Older or budget devices may use armeabi-v7a, the 32-bit build. If you are unsure, a system-information app can report the device architecture.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is there a Windows version?</summary>
+        <p>
+          Yes. The source article describes a native Windows build, so you do not need BlueStacks, LDPlayer or NoxPlayer to use the Windows version. Download the archive, extract it into its own folder and run the executable there.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I play Gacha Nebula on PC without an emulator?</summary>
+        <p>
+          Yes. Use the native Windows build from the creators' project page. An emulator is only relevant if you specifically need the Android build on a computer.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is Gacha Nebula available on iPhone or iPad?</summary>
+        <p>
+          No. The source article states that there is no iOS version and no supported method for installing an Android APK on an iPhone or iPad.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does Gacha Nebula replace Gacha Club?</summary>
+        <p>
+          No. It is presented as a separate installation, allowing Gacha Club to remain installed alongside it.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I move my Gacha Club characters into Nebula?</summary>
+        <p>
+          The source article says there is no official transfer tool and that characters and scenes should be treated as separate between the two applications. Export anything important before uninstalling either application.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does Gacha Nebula need an internet connection?</summary>
+        <p>
+          Your original article marks this as something that must be verified before stating it definitively. It describes Nebula as a standalone installation rather than a server-based game, but that is not enough to present offline operation as a confirmed creator-documented fact.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is Gacha Nebula safe to install?</summary>
+        <p>
+          The safest approach described in the source is to use the creators' project page or a mirror that clearly identifies where its copy came from. The page should not claim that an APK is “100% safe” or “virus-free” without evidence.
+        </p>
+      </details>
+
+      <details>
+        <summary>Should I disable Play Protect to install it?</summary>
+        <p>
+          No. The source article specifically advises against switching off Play Protect or other security features just to force an installation.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why do different websites show different Gacha Nebula versions?</summary>
+        <p>
+          Mirrors can become stale, users can re-upload different builds, and listings may disagree about identifiers. Check the creators' project page for the current release rather than trusting an unrelated listing.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I know when a new update is available?</summary>
+        <p>
+          Sideloaded apps do not automatically update through Google Play. Check the creators' project page for new releases.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is Gacha Nebula made by Lunime?</summary>
+        <p>
+          No. It is a fan-made mod created by noxula with Deana_3 and Agoras and is not affiliated with, endorsed by or supported by Lunime.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I install the Android APK on Windows?</summary>
+        <p>
+          The source article recommends using the native Windows archive instead. An Android APK does not run on Windows on its own.
+        </p>
+      </details>
+
+      <details>
+        <summary>What should I do if the app says “App not installed”?</summary>
+        <p>
+          Check the Android architecture first. If the architecture is correct, the source article recommends treating the file as potentially incomplete, downloading it again on a stable connection and checking available storage.
+        </p>
+      </details>
+
+      <details>
+        <summary>What should I do if Nebula crashes after installation?</summary>
+        <p>
+          Confirm that you selected the correct architecture, make sure you have enough free storage, restart the device and try reinstalling. The source article also mentions lowering settings on low-RAM devices.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why are my character slots showing as undefined?</summary>
+        <p>
+          The original article says newly added slots can display as “undefined” and describes applying a preset and restarting the app as possible fixes. The article marks this troubleshooting information for verification against the creators' current notes.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FINAL DISCLAIMER -->
+<section class="gn-sec gn-sec--alt" style="padding:26px 0;border-top:1px solid var(--gn-line)">
+  <div class="gn-wrap">
+
+    <div style="display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center">
+
+      <p class="gn-tiny">
+        Gacha Nebula is a fan-made mod and is not affiliated with, endorsed by or supported by Lunime.
+      </p>
+
+      <p class="gn-tiny" style="display:flex;flex-wrap:wrap;gap:16px">
+        <a href="/">Home</a>
+        <a href="/download/">Download</a>
+        <a href="/how-to-install/">How to Install</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What is Gacha Nebula?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Gacha Nebula is a fan-made mod of Gacha Club created by noxula together with Deana_3 and Agoras. It keeps the original editor and Studio foundation while adding a much larger library of clothing, hairstyles, accessories, props, pets, poses and backgrounds, together with a space-themed interface."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is Gacha Nebula free?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. The supplied article describes Gacha Nebula as a free fan project."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Why is Gacha Nebula an APK instead of a Play Store app?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"The mod is published on itch.io rather than Google Play, so Android users install the Android release manually as an APK."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Which file should I download — 32-bit or 64-bit?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Most recent phones use arm64-v8a, which is the 64-bit build. Older or budget devices may use armeabi-v7a, the 32-bit build."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is there a Windows version?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. The source article describes a native Windows build, so an Android emulator is not required for the Windows version."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is Gacha Nebula available on iPhone or iPad?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"No. The source article states that there is no iOS version and no supported method for installing an Android APK on an iPhone or iPad."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Does Gacha Nebula replace Gacha Club?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"No. It is presented as a separate installation, allowing Gacha Club to remain installed alongside it."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is Gacha Nebula made by Lunime?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"No. It is a fan-made mod created by noxula with Deana_3 and Agoras and is not affiliated with, endorsed by or supported by Lunime."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How do I know when a new update is available?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Sideloaded apps do not automatically update through Google Play. Check the creators' project page for new releases."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Why do different websites show different Gacha Nebula versions?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Mirrors can become stale, users can re-upload different builds, and listings may disagree about identifiers. Check the creators' project page for the current release."
+      }
+    }
+  ]
+}
+</script>
+
+</div>
